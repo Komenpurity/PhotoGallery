@@ -10,7 +10,7 @@ function Navbar() {
         </div>
 
         <div className="navbar-nav">
-            <button type="button" className="btn btn-outline-info" ><Link to="/signup" className="navbar-link text-decoration-none text-black">Login</Link></button>
+            <button type="button" className="btn btn-outline-info" ><Link to="/signup" className="navbar-link text-decoration-none text-black">Signup</Link></button>
         </div>
 
     </nav>

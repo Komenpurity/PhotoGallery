@@ -3,7 +3,7 @@ import Landing from './Landing'
 
 function Home() {
   return (
-    <div>
+    <div className='container'> 
         <Landing />
     </div>
   )

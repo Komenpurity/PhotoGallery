@@ -1,9 +1,31 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'rest-client'
+
+def user_dataset
+   users = RestClient.get("https://jsonplaceholder.typicode.com/users")
+   users_array = JSON.parse(users)
+   #puts(users_array) 
+   users_array.each do |s| 
+        User.create(name: s["name"], username: s["username"], email: s["email"]) 
+    end
+end
+user_dataset()
+
+
+def photos_dataset
+    photos = RestClient.get("https://jsonplaceholder.typicode.com/photos")
+    photos_array = JSON.parse(photos)
+    photos_array.each do |s| 
+        Photo.create(albumId: s["albumId"], photoTitle: s["title"], imageUrl: s["url"]) 
+    end
+end
+photos_dataset()
+
+
+def albums_dataset
+   albums = RestClient.get("https://jsonplaceholder.typicode.com/albums")
+   albums_array = JSON.parse(albums)
+   albums_array.each do |s| 
+        Album.create(albumId: s["id"], userId: s["userId"], albumTitle: s["title"]) 
+    end
+end
+albums_dataset()

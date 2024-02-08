@@ -37,7 +37,7 @@ function  Signup() {
 
             <button type="submit" className="btn btn-primary m-2">Submit</button>
 
-            <p>Already have an account <Link to="/login" className="navbar-link text-black"> Login </Link></p>
+            <p>Already have an account, <Link to="/login" className="navbar-link text-black"> Login </Link></p>
         </form>
     </div>
   )

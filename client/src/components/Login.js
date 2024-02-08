@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
+import AuthDetails from './AuthDetails'
 
 function Login() {
 
@@ -35,6 +36,7 @@ function Login() {
             </div>
 
             <button type="submit" className="btn btn-primary m-2">Submit</button>
+            <AuthDetails />
         </form>
     </div>
   )

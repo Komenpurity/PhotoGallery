@@ -4,10 +4,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
 
 function  Signup() {
-
+  //store password and email state
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
 
+    //handle form data
     function handleSubmit(e) {
       e.preventDefault();
       createUserWithEmailAndPassword(auth, email, password)
@@ -37,7 +38,7 @@ function  Signup() {
 
             <button type="submit" className="btn btn-primary m-2">Submit</button>
 
-            <p>Already have an account <Link to="/login" className="navbar-link text-black"> Login </Link></p>
+            <p>Already have an account, <Link to="/login" className="navbar-link text-black"> Login </Link></p>
         </form>
     </div>
   )

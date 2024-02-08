@@ -1,18 +1,17 @@
 import './App.css';
 import Home from './components/Home';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Landing from './components/Landing';
 import Signup from './components/Signup'
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
 import AlbumInfo from './components/AlbumInfo';
 import PhotoInfo from './components/PhotoInfo';
+import DataNav from './components/DataNav';
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
         <Routes >
           <Route path = "/" element = {<Home/>}/> 
           <Route path = "/signup" element = {<Signup/>}/> 
@@ -21,6 +20,7 @@ function App() {
           <Route path = "/userinfo" element = {<UserInfo/>}/> 
           <Route path = "/album" element = {<AlbumInfo/>}/>
           <Route path = "/photo" element = {<PhotoInfo/>}/>
+          <Route path = "/datanav" element = {<DataNav/>}/>
          </Routes> 
       </BrowserRouter>
   );

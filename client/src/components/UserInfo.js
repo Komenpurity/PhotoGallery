@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import UserDisplay from './UserDisplay'
+import DataNav from './DataNav'
 
 function UserInfo() {
   //Hold user's state
@@ -29,6 +30,8 @@ function UserInfo() {
   }
 
   return (
+    <div>
+      <DataNav />
     <div className='row'>
       <h4>Users</h4>
         {users?.map(data => {
@@ -48,6 +51,7 @@ function UserInfo() {
             return <UserDisplay key={element.id}  name={element.name} username={element.username} email={element.email} />
           }
         )} 
+    </div>
     </div>
   )
 }

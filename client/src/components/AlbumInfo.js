@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import DataNav from './DataNav'
 
 function AlbumInfo() {
     const [album,setAlbum] = useState([]) 
@@ -15,6 +16,8 @@ function AlbumInfo() {
     },[])
 
   return (
+    <div>
+      <DataNav />
     <div className='row'>
       <h4>Albums</h4> 
         {album?.map(data => {
@@ -28,6 +31,7 @@ function AlbumInfo() {
             </div>
           )
         })}
+    </div>
     </div>
   )
 }

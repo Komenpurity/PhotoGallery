@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import DataNav from './DataNav'
 
 function PhotoInfo() {
     const [photo,setPhoto] = useState([]) 
@@ -16,6 +17,8 @@ function PhotoInfo() {
 
    
   return (
+    <div>
+      <DataNav />
     <div className='row'>
       <h4>Photo</h4> 
         {photo.slice(0,180)?.map(data => { 
@@ -31,6 +34,7 @@ function PhotoInfo() {
             </div>
           )
         })}
+    </div>
     </div>
   )
 }

@@ -4,10 +4,11 @@ import { auth } from "../ firebase"
 import AuthDetails from './AuthDetails'
 
 function Login() {
-
+  //store password and email in state
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
 
+    //handle submit data from the form
     function handleSubmit(e) {
       e.preventDefault();
       signInWithEmailAndPassword(auth, email, password)

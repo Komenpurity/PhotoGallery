@@ -4,10 +4,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
 
 function  Signup() {
-
+  //store password and email state
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
 
+    //handle form data
     function handleSubmit(e) {
       e.preventDefault();
       createUserWithEmailAndPassword(auth, email, password)

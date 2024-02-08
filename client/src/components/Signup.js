@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
 
-function Login() {
+function  Signup() {
 
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
 
     function handleSubmit(e) {
       e.preventDefault();
-      signInWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, password)
         .then((user) =>{
           console.log(user)
         } )
@@ -22,7 +23,7 @@ function Login() {
   return (
     <div className="container m-5 d-flex justify-content-center w-50">   
         <form onSubmit={handleSubmit}>
-        <h5 className='display-5'>Login</h5>
+        <h5 className='display-5'>Signup</h5>
 
           <div className="form-group"> 
               <label id='email'>Email </label>
@@ -35,9 +36,11 @@ function Login() {
             </div>
 
             <button type="submit" className="btn btn-primary m-2">Submit</button>
+
+            <p>Already have an account <Link to="/login" className="navbar-link text-black"> Login </Link></p>
         </form>
     </div>
   )
 }
 
-export default Login
+export default Signup

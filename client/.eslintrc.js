@@ -33,5 +33,11 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
+        "no-unused-vars" : [
+            "warn",{
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+            }
+            ]
     }
 }

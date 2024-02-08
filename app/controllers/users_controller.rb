@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
+    
       def index
         users = User.all
         render json: users
       end
-
 
     private
 

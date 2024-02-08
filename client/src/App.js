@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import Signup from './components/Signup'
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
+import AlbumInfo from './components/AlbumInfo';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path = "/signup" element = {<Signup/>}/> 
           <Route path = "/landing" element = {<Landing/>}/> 
           <Route path = "/login" element = {<Login/>}/>
-          <Route path = "/userinfo" element = {<UserInfo/>}/>
+          <Route path = "/userinfo" element = {<UserInfo/>}/> 
+          <Route path = "/album" element = {<AlbumInfo/>}/>
          </Routes> 
       </BrowserRouter>
   );

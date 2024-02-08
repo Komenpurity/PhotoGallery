@@ -17,6 +17,7 @@ function UserInfo() {
     .catch(error => console.log(error))    
   },[])
 
+  //fetch user clicked by id
   function handleClick(id){
     fetch(`/users/${id}`)
     .then(response => response.json())
@@ -29,7 +30,7 @@ function UserInfo() {
 
   return (
     <div className='row'>
-      
+      <h4>Users</h4>
         {users?.map(data => {
           //loop through the data and display each of the arrays
           return(

@@ -9,7 +9,7 @@ function AlbumInfo() {
         .then((r) => r.json())
         .then((data) => { 
             setAlbum(data)
-            console.log(album)  
+            //console.log(album)  
         })
         .catch(error => console.log(error))    
     },[])

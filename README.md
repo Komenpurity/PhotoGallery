@@ -81,7 +81,7 @@ NB: Code quality for the backend will not be strictly assessed.
 - Ruby on Rails (Backend)
 - SQLite Database
 - Bootstrap
-- JWT for Authentication
+- Firebase for Authentication
 - ESLint
 
 

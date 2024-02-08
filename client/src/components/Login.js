@@ -1,38 +1,34 @@
 import React, { useState } from 'react'
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../ firebase"
 
 function Login() {
 
-  const [username,setUsername] = useState("") 
-    const [password, setPassword] = useState("");
-  
+  const [password, setPassword] = useState("");
+  const [email,setEmail] = useState("")
+
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          username, 
-          password
-        }),
-      })
-        .then((r) => r.json())
+      signInWithEmailAndPassword(auth, email, password)
         .then((user) =>{
-          setUsername(user) 
           console.log(user)
-        } ); 
+        } )
+        .catch((error) => {
+          console.log(error);
+        });
     }  
 
 
   return (
     <div className="container m-5 d-flex justify-content-center w-50">   
         <form onSubmit={handleSubmit}>
-        <h5 className='display-5'>Login</h5>  
-            <div className="form-group"> 
-                <label id='username'>Username </label>
-                <input type="username" className="form-control" id='username' value={username}   onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" />
-            </div>
+        <h5 className='display-5'>Login</h5>
+
+          <div className="form-group"> 
+              <label id='email'>Email </label>
+              <input type="email" className="form-control" id='email' value={email}   onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" />
+          </div>
+
             <div className="form-group">
                 <label id='password'>Password</label>
                 <input type="password" id='password' value={password}  onChange={(e) => setPassword(e.target.value)} className="form-control"  placeholder="Password" />

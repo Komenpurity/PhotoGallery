@@ -14,10 +14,12 @@ function PhotoInfo() {
         .catch(error => console.log(error))    
     },[])
 
+   
   return (
     <div className='row'>
       <h4>Photo</h4> 
-        {photo?.map(data => { 
+        {photo.slice(0,180)?.map(data => { 
+          //the slice method allows us to display values from index 0 to 179 since the api has alot of values
           //loop through the data and display each of the photos from the api
           return(
             <div className="card col-2 m-2" key={data.id} >  

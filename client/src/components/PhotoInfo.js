@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import DataNav from './DataNav'
 
 function PhotoInfo() {
     const [photo,setPhoto] = useState([]) 
@@ -14,21 +15,25 @@ function PhotoInfo() {
         .catch(error => console.log(error))    
     },[])
 
+   
   return (
+    <div className='container'>
+      <DataNav />
     <div className='row'>
       <h4>Photo</h4> 
-        {photo?.map(data => { 
+        {photo.slice(0,180)?.map(data => { 
+          //the slice method allows us to display values from index 0 to 179 since the api has alot of values
           //loop through the data and display each of the photos from the api
           return(
-            <div className="card col-2 m-2" key={data.id} >  
-                <h5 className="card-title">AlbumId: {data.albumId}</h5> 
-                <img src={data.imageUrl} className="card-img-top" alt="..."/>
+            <div className="card max-w-sm rounded overflow-hidden shadow-lg col-2 m-2" key={data.id} >  
+                <img src={data.imageUrl} className="card-img-top m-1"/>
               <div className="card-body">
                 <h5 className="card-title">Name: {data.photoTitle}</h5>
               </div>
             </div>
           )
         })}
+    </div>
     </div>
   )
 }

@@ -21,16 +21,6 @@ function AuthDetails() {
     };
   }, []);
 
-
- /*  const userSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("sign out successful");
-      })
-      .catch((error) => console.log(error));
-  }; */
-
-
   return (
     <div>
         {authUser ? (

@@ -25,7 +25,7 @@ def albums_dataset
    albums = RestClient.get("https://jsonplaceholder.typicode.com/albums")
    albums_array = JSON.parse(albums)
    albums_array.each do |s| 
-        Album.create(albumId: s["id"], userId: s["userId"], albumTitle: s["title"]) 
+        Album.create(album_id: s["id"], user_id: s["userId"], albumTitle: s["title"])  
     end
 end
 albums_dataset()

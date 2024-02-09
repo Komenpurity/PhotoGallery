@@ -12,6 +12,7 @@ gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
 gem "rack-cors"
 gem 'rest-client', '~> 2.1'
+gem 'active_model_serializers'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

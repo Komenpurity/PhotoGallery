@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import UserDisplay from './UserDisplay'
 import DataNav from './DataNav'
 
 function UserInfo() { 
@@ -24,7 +23,7 @@ function UserInfo() {
     .then(response => response.json())
     .then((data) =>  {  
       setValue([data])    
-      //console.log(data)
+      //console.log(value.albums) 
     }) 
     .catch(error => console.log(error))    
   }
@@ -44,13 +43,35 @@ function UserInfo() {
                 <h5 className="card-title">Name: {data.name}</h5>
                 <p className="card-text">Username: {data.username}</p>
                 <p className="card-text">Email: {data.email}</p>
+                <p className="card-text"> How many Albums: {data.albums.length}</p>
               </div>
             </div>
           )
         })}
 
-       {value?.map((element) => {     
-            return <UserDisplay key={element.id} name={element.name} username={element.username} email={element.email} />  
+       {value?.map((element) => {   
+            return(
+              <>
+              <h5>User Details</h5>
+                <div className="card col-2 m-2" key={element.id}> 
+                     <div className="card-body">
+                         <h5 className="card-title">Name: {element.name}</h5>
+                          <p className="card-text">Username: {element.username}</p>
+                          <p className="card-text">Email: {element.email}</p>
+
+                          {element.albums?.map((data) => {  
+                            return(
+                              <div key={data.album_id}> 
+                                <h5 className="card-title">AlbumTitle: {data.albumTitle}</h5>
+                              </div>
+                            )})}
+                          
+                          
+                    </div>
+          
+                  </div>
+              </>
+            )
           }
         )}  
 

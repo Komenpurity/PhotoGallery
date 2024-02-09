@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
       def index
         albums = Album.all
-        render json: albums
+        render json: albums, include: :user 
       end
 
       def show

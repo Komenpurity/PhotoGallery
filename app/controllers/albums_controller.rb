@@ -3,12 +3,12 @@ class AlbumsController < ApplicationController
 
       def index
         albums = Album.all
-        render json: albums, include: :user 
+        render json: albums, include: :user
       end
 
       def show
         album =  Album.find(params[:id]) 
-        render json: album
+        render json: album,include: :photos
       end
 
     private

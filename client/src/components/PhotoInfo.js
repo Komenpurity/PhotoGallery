@@ -25,9 +25,8 @@ function PhotoInfo() {
           //the slice method allows us to display values from index 0 to 179 since the api has alot of values
           //loop through the data and display each of the photos from the api
           return(
-            <div className="card col-2 m-2" key={data.id} >  
-                <h5 className="card-title">AlbumId: {data.albumId}</h5> 
-                <img src={data.imageUrl} className="card-img-top"/>
+            <div className="card max-w-sm rounded overflow-hidden shadow-lg col-2 m-2" key={data.id} >  
+                <img src={data.imageUrl} className="card-img-top m-1"/>
               <div className="card-body">
                 <h5 className="card-title">Name: {data.photoTitle}</h5>
               </div>

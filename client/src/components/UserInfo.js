@@ -29,6 +29,7 @@ function UserInfo() {
   }
 
 
+
   return (
     <div className='container'>
       <DataNav />
@@ -38,12 +39,13 @@ function UserInfo() {
         {users?.map(data => {
           //loop through the data and display each of the arrays
           return(
-            <div className="card col-2 m-2" key={data.id} onClick={() => handleClick(data.id)}> 
-              <div className="card-body">
-                <h5 className="card-title">Name: {data.name}</h5>
-                <p className="card-text">Username: {data.username}</p>
-                <p className="card-text">Email: {data.email}</p>
-                <p className="card-text"> How many Albums: {data.albums.length}</p>
+            <div className="card max-w-sm rounded overflow-hidden shadow-lg col-3 m-2" key={data.id} onClick={() => handleClick(data.id)}> 
+             
+              <div className='card-body'>
+                <h5>{ data.name }</h5>
+                <p>Username: {data.username}</p> 
+                <p >Email: {data.email}</p>
+                <p> How many Albums: {data.albums.length}</p>
               </div>
             </div>
           )
@@ -53,17 +55,18 @@ function UserInfo() {
             return(
               <>
               <h5>User Details</h5>
-                <div className="card col-2 m-2" key={element.id}> 
+                <div className="card max-w-sm rounded overflow-hidden shadow-lg col-6" key={element.id}> 
                      <div className="card-body">
-                         <h5 className="card-title">Name: {element.name}</h5>
-                          <p className="card-text">Username: {element.username}</p>
-                          <p className="card-text">Email: {element.email}</p>
+                         <h5 >{element.name}</h5>
+                          <p>Username: {element.username}</p>
+                          <p>Email: {element.email}</p>
 
+                          <h5>Album Titles</h5>
                           {element.albums?.map((data) => {  
                             return(
-                              <div key={data.album_id}> 
-                                <h5 className="card-title">AlbumTitle: {data.albumTitle}</h5>
-                              </div>
+                              <ul key={data.album_id}> 
+                                <li>{data.albumTitle}</li>
+                              </ul> 
                             )})}
                           
                           

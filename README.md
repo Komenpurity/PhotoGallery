@@ -4,6 +4,13 @@
 An application for displaying photos.
 
 ## Project Setup
+1. Clone the application using git clone git@github.com:Komenpurity/PhotoGallery.git
+2. Go into the directory with the code
+3. Run bundle install to install gem dependencies
+4. Go into the client folder,cd client
+5. npm install in the client folder
+6. Run npm start to view the frontend
+7. Alternatively, one can can run npm start --prefix client from the root directory of the folder and rails s to get the backend running.
 
 
 ## Deliverables
@@ -56,23 +63,23 @@ https://jsonplaceholder.typicode.com/
 the following Restful APIs.
 NB: Code quality for the backend will not be strictly assessed.
 
-● api/users
-○ Each user should have the following fields:
-■ Name
-■ Username
-■ Email
+1. api/users
+ Each user should have the following fields:
+- Name
+- Username
+- Email
 
-● api/albums
-- Each album should have the following fields:
-■ Album id
-■ User id
-■ Album title
+2. api/albums
+ Each album should have the following fields:
+- Album id
+- User id
+- Album title
   
-● api/photos
-○ Each album should have the following fields:
-■ Album id
-■ Photo title
-■ Image URL
+3. api/photos
+ Each album should have the following fields:
+- Album id
+- Photo title
+- Image URL
 
 
 ## Technologies Used

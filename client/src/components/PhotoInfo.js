@@ -17,7 +17,7 @@ function PhotoInfo() {
 
    
   return (
-    <div>
+    <div className='container'>
       <DataNav />
     <div className='row'>
       <h4>Photo</h4> 
@@ -27,7 +27,7 @@ function PhotoInfo() {
           return(
             <div className="card col-2 m-2" key={data.id} >  
                 <h5 className="card-title">AlbumId: {data.albumId}</h5> 
-                <img src={data.imageUrl} className="card-img-top" alt="..."/>
+                <img src={data.imageUrl} className="card-img-top"/>
               <div className="card-body">
                 <h5 className="card-title">Name: {data.photoTitle}</h5>
               </div>

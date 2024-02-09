@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import UserDisplay from './UserDisplay'
 import DataNav from './DataNav'
 
-function UserInfo() {
+function UserInfo() { 
   //Hold user's state
   const [users,setUsers] = useState([])
-  const [value,setValue] = useState([])
+  const [value,setValue] = useState([]) 
 
   //fetch data from the api
   useEffect(() => {
@@ -23,17 +23,19 @@ function UserInfo() {
     fetch(`/users/${id}`)
     .then(response => response.json())
     .then((data) =>  {  
-      setValue(data)  
-      console.log(data) 
+      setValue([data])    
+      //console.log(data)
     }) 
     .catch(error => console.log(error))    
   }
 
+
   return (
-    <div>
+    <div className='container'>
       <DataNav />
     <div className='row'>
       <h4>Users</h4>
+
         {users?.map(data => {
           //loop through the data and display each of the arrays
           return(
@@ -47,10 +49,11 @@ function UserInfo() {
           )
         })}
 
-        {value?.map((element) => {    
-            return <UserDisplay key={element.id}  name={element.name} username={element.username} email={element.email} />
+       {value?.map((element) => {     
+            return <UserDisplay key={element.id} name={element.name} username={element.username} email={element.email} />  
           }
-        )} 
+        )}  
+
     </div>
     </div>
   )

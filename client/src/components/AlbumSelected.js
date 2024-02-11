@@ -9,7 +9,7 @@ function AlbumSelected() {
         fetch(`/albums/${id}`)
         .then(response => response.json())
         .then((data) =>  {  
-            setInfo([data])  
+            setInfo([data]) 
         }) 
         .catch(error => console.log(error))  
     },[])
@@ -17,7 +17,7 @@ function AlbumSelected() {
   return (
     <div>
         <div className='container row'> 
-            <h5 className='m-2'>Album Details</h5>  
+           <h5 className='m-2'>Album Details</h5>  
 
         {info?.map((element) => {   
             return(

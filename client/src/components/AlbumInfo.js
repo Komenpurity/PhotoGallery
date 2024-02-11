@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import DataNav from './DataNav'
+import { useNavigate } from 'react-router-dom';
 
 function AlbumInfo() {
     const [album,setAlbum] = useState([]) 
-    const [info,setInfo] = useState([])
+    const navigate = useNavigate();
 
     //fetch data from the api
     useEffect(() => {
@@ -19,13 +20,7 @@ function AlbumInfo() {
 
     //fetch album details when card clicked by id 
   function handleClick(id){
-    fetch(`/albums/${id}`)
-    .then(response => response.json())
-    .then((data) =>  {  
-      setInfo([data]) 
-     // console.log(info)  
-    }) 
-    .catch(error => console.log(error))    
+    { navigate(`/albums/${id}`) }  
   }
 
 
@@ -45,35 +40,6 @@ function AlbumInfo() {
           )
         })}
     </div>
-
-    <div className='row'> 
-      <h5>Album Details</h5> 
-
-      {info?.map((element) => {   
-            return(
-              <>
-                <div className="card col-6" key={element.id}> 
-                     <div className="card-body">
-                         <h5 >{element.albumTitle}</h5>
-
-                          <h5>Album Photos</h5>
-                          {element.photos.slice(0,90)?.map((data) => {  
-                            return(
-                              <div key={data.id}> 
-                                <ul key={data.id}> 
-                                  <li>{data.photoTitle}</li>
-                                  <img src={data.imageUrl} className="card-img-top m-1"/>
-                                </ul> 
-                              </div>
-                              
-                            )})}
-                    </div>
-                  </div>
-              </>
-            )
-          }
-        )}  
-        </div>
 
     </div>
   )

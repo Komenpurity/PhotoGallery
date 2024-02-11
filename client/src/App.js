@@ -8,6 +8,8 @@ import UserInfo from './components/UserInfo';
 import AlbumInfo from './components/AlbumInfo';
 import PhotoInfo from './components/PhotoInfo';
 import DataNav from './components/DataNav';
+import UserSelected from './components/UserSelected';
+import AlbumSelected from './components/AlbumSelected';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path = "/album" element = {<AlbumInfo/>}/>
           <Route path = "/photo" element = {<PhotoInfo/>}/>
           <Route path = "/datanav" element = {<DataNav/>}/>
+          <Route path = "/users/:id" element = {<UserSelected/>}/>
+          <Route path = "/albums/:id" element = {<AlbumSelected/>}/>
          </Routes> 
       </BrowserRouter>
   );

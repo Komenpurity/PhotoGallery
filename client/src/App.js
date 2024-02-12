@@ -10,6 +10,7 @@ import PhotoInfo from './components/PhotoInfo';
 import DataNav from './components/DataNav';
 import UserSelected from './components/UserSelected';
 import AlbumSelected from './components/AlbumSelected';
+import PhotoForm from './components/PhotoForm';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path = "/datanav" element = {<DataNav/>}/>
           <Route path = "/users/:id" element = {<UserSelected/>}/>
           <Route path = "/albums/:id" element = {<AlbumSelected/>}/>
+          <Route path = "/photos/:id"  element = {<PhotoForm/>}/>
          </Routes> 
       </BrowserRouter>
   );

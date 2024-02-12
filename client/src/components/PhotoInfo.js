@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataNav from './DataNav'
+import { Link } from "react-router-dom";
 
 function PhotoInfo() {
     const [photo,setPhoto] = useState([]) 
@@ -33,8 +34,9 @@ function PhotoInfo() {
                 <div className="card max-w-sm rounded overflow-hidden shadow-lg col-2 m-2" key={data.id} >  
                     <img src={data.imageUrl} className="card-img-top m-1"/>
                   <div className="card-body">
-                    <h5 className="card-title">Name: {data.photoTitle}</h5>
-                  </div>
+                    <h5 className="card-title">Name: {data.photoTitle}</h5> 
+                    <button type='submit' className='btn btn-success'><Link to={`/photos/${data.id}`} className='text-decoration-none text-white'> Edit Name </Link></button>
+                    </div>
                 </div>
               )
             })}

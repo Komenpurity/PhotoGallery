@@ -13,7 +13,7 @@ function UserSelected() {
        setValue([data])          
     }) 
     .catch(error => console.log(error)) 
-   },[])
+   },[id]) 
 
   return (
     <div className='container m-3'> 

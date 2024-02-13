@@ -21,7 +21,7 @@ function AlbumInfo() {
 
     //fetch album details when card clicked by id 
   function handleClick(id){
-    { navigate(`/albums/${id}`) }  
+     navigate(`/albums/${id}`)  
   }
 
 

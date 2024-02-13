@@ -22,7 +22,7 @@ function UserInfo() {
 
       //redirect the user to the specified id
       function handleClick(id){  
-      { navigate(`/users/${id}`) }  
+       navigate(`/users/${id}`)  
      }
 
 

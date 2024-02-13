@@ -26,7 +26,7 @@ function PhotoForm() {
           .then((result) => {
             setData(result)
             alert("Edit Successful!") 
-            { navigate('/photo') }  
+             navigate('/photo')  
           }) 
           .catch((err) => console.log('error: ', err))
       }

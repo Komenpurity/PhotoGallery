@@ -11,7 +11,7 @@ function DataNav() {
         signOut(auth)
           .then(() => {
             console.log("sign out successful");
-            { navigate('/login') }
+             navigate('/login') 
           })
           .catch((error) => console.log(error));
 

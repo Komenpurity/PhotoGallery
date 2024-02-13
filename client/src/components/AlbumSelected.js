@@ -13,7 +13,7 @@ function AlbumSelected() {
             setInfo([data]) 
         }) 
         .catch(error => console.log(error))  
-    },[])
+    },[id]) 
 
   return (
     <div>
@@ -32,7 +32,7 @@ function AlbumSelected() {
                               <div key={data.id}> 
                                 <ul key={data.id}> 
                                   <li>{data.photoTitle}</li>
-                                  <img src={data.imageUrl} className="w-25 h-25"/>
+                                  <img src={data.imageUrl} className="w-25 h-25" alt='img'/>
                                 </ul> 
                               </div>
                               

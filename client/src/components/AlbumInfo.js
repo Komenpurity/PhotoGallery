@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import DataNav from './DataNav'
+import { useNavigate } from 'react-router-dom';
 
 function AlbumInfo() {
     const [album,setAlbum] = useState([]) 
-    const [info,setInfo] = useState([])
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     //fetch data from the api
     useEffect(() => {
@@ -11,7 +13,7 @@ function AlbumInfo() {
         .then((r) => r.json())
         .then((data) => { 
             setAlbum(data)
-            //console.log(data)   
+            setLoading(false); 
         })
         .catch(error => console.log(error))    
     },[])
@@ -19,62 +21,32 @@ function AlbumInfo() {
 
     //fetch album details when card clicked by id 
   function handleClick(id){
-    fetch(`/albums/${id}`)
-    .then(response => response.json())
-    .then((data) =>  {  
-      setInfo([data]) 
-     // console.log(info)  
-    }) 
-    .catch(error => console.log(error))    
+     navigate(`/albums/${id}`)  
   }
 
 
   return (
     <div className='container'> 
-      <DataNav />
-    <div className='row'>
-      <h4>Albums</h4> 
-        {album?.map(data => {
-          //loop through the data and display each of the albums from the api
-          return(
-            <div onClick={() => handleClick(data.id)} className="card max-w-sm rounded overflow-hidden shadow-lg col-2 m-2" key={data.id} > 
-              <div className="card-body">
-                <h5> {data.albumTitle} </h5>
-              </div>
-            </div>
-          )
-        })}
-    </div>
-
-    <div className='row'> 
-      <h5>Album Details</h5> 
-
-      {info?.map((element) => {   
-            return(
-              <>
-                <div className="card col-6" key={element.id}> 
-                     <div className="card-body">
-                         <h5 >{element.albumTitle}</h5>
-
-                          <h5>Album Photos</h5>
-                          {element.photos.slice(0,90)?.map((data) => {  
-                            return(
-                              <div key={data.id}> 
-                                <ul key={data.id}> 
-                                  <li>{data.photoTitle}</li>
-                                  <img src={data.imageUrl} className="card-img-top m-1"/>
-                                </ul> 
-                              </div>
-                              
-                            )})}
-                    </div>
+    {loading ? (
+          <h5 className='d-flex justify-content-center m-4'> Loading... <i className="fas fa-atom fa-spin"></i> </h5>  
+    ) : (
+      <>
+          <DataNav />
+        <div className='row'>
+          <h4>Albums</h4> 
+            {album?.map(data => {
+              //loop through the data and display each of the albums from the api
+              return(
+                <div onClick={() => handleClick(data.id)} className="card max-w-sm rounded overflow-hidden shadow-lg col-2 m-2" key={data.id} > 
+                  <div className="card-body">
+                    <h5> {data.albumTitle} </h5>
                   </div>
-              </>
-            )
-          }
-        )}  
+                </div>
+              )
+            })}
         </div>
-
+      </>
+    )}
     </div>
   )
 }

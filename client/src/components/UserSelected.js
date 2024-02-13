@@ -22,8 +22,8 @@ function UserSelected() {
             return(
               <> 
                 <div className="card max-w-sm rounded overflow-hidden shadow-lg d-flex m-4 col-6" key={element.id}> 
-                     <div className="card-body">
-                         <h5 >{element.name}</h5>
+                     <div className="card-body" key={element.id}> 
+                         <h5>{element.name}</h5>  
                          <p>Username: {element.username}</p> 
                           <p >Email: {element.email}</p>
                           <p> How many Albums: {element.albums.length}</p>
@@ -32,7 +32,7 @@ function UserSelected() {
                               { element.albums.map(data => { 
                                   return (
                                     <ul key={data.id}> 
-                                      <li> {data.albumTitle} </li> 
+                                      <li key={data.id}> {data.albumTitle} </li> 
                                     </ul>   
                                 )}) }
                           

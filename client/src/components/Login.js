@@ -1,28 +1,36 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
-import AuthDetails from './AuthDetails'
+import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function Login() {
   //store password and email in state
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
+  /* eslint-disable no-unused-vars */
+  const [user,setUser] = useState("")
+  const navigate = useNavigate();
 
     //handle submit data from the form
     function handleSubmit(e) {
       e.preventDefault();
       signInWithEmailAndPassword(auth, email, password)
         .then((user) =>{
-          console.log(user)
+          setUser(user) 
+          { navigate('/userinfo') }
         } )
         .catch((error) => {
           console.log(error);
+          alert("Login Failed") 
         });
     }  
 
 
   return (
-    <div className="container m-5 d-flex justify-content-center w-50">   
+    <div className='container'> 
+     <Navbar />
+    <div className="m-5 d-flex justify-content-center w-50">   
         <form onSubmit={handleSubmit}>
         <h5 className='display-5'>Login</h5>
 
@@ -37,8 +45,8 @@ function Login() {
             </div>
 
             <button type="submit" className="btn btn-primary m-2">Submit</button>
-            <AuthDetails />
         </form>
+    </div>
     </div>
   )
 }

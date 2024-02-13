@@ -5,6 +5,7 @@ function AlbumSelected() {
     const { id } = useParams();
     const [info,setInfo] = useState([]) 
 
+    //fetch album of a specific id
     useEffect(() => {
         fetch(`/albums/${id}`)
         .then(response => response.json())

@@ -8,18 +8,14 @@ function AuthDetails() {
     const navigate = useNavigate();
 
   useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
+     onAuthStateChanged(auth, (user) => {
       if (user) {
         setAuthUser(user);
       } else {
         setAuthUser(null);
       }
     });
-
-    return () => {
-      listen();
-    };
-  }, []);
+  }, [authUser]); 
 
   return (
     <div>
@@ -28,7 +24,7 @@ function AuthDetails() {
           { navigate('/userinfo') }
         </>
       ) : (
-        <p>Signed Out</p>
+        <p>Signed Out</p> 
       )}
     </div>
   )

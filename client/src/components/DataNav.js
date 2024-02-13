@@ -2,15 +2,19 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../ firebase";
+import { useNavigate } from 'react-router-dom';
 
 function DataNav() {
+    const navigate = useNavigate();
 
     const userSignOut = () => {
         signOut(auth)
           .then(() => {
             console.log("sign out successful");
+            { navigate('/login') }
           })
           .catch((error) => console.log(error));
+
       };
 
   return (
@@ -32,7 +36,7 @@ function DataNav() {
         </div>
 
         <div className="navbar-nav d-flex justify-content-end">
-            <button type="button" className="btn btn-outline-info" onClick={userSignOut} ><Link to="/login" className="navbar-link text-decoration-none text-black">SignOut</Link></button>
+            <button type="button" className="btn btn-outline-info text-black" onClick={userSignOut} >SignOut</button>
         </div>
 
     </nav>

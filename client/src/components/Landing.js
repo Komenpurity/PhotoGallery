@@ -5,7 +5,7 @@ function Landing() {
   return (
     <div>
 
-        <div className='container landing img-fluid'>
+        <div className='container landing img-fluid font-weight-bold'>
           <img src='' alt=''/>
           <h2>PhotoGallery</h2>
           <h4>The Home for Your Memories</h4>

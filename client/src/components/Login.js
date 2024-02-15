@@ -36,15 +36,15 @@ function Login() {
 
           <div className="form-group"> 
               <label id='email'>Email </label>
-              <input type="email" className="form-control" id='email' value={email}   onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" />
+              <input data-type="email" type="email" className="form-control" id='email' value={email}   onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" />
           </div>
 
             <div className="form-group">
                 <label id='password'>Password</label>
-                <input type="password" id='password' value={password}  onChange={(e) => setPassword(e.target.value)} className="form-control"  placeholder="Password" />
+                <input data-type="password" type="password" id='password' value={password}  onChange={(e) => setPassword(e.target.value)} className="form-control"  placeholder="Password" />
             </div>
 
-            <button type="submit" className="btn btn-primary m-2">Submit</button>
+            <button data-type="data-submit" type="submit" className="btn btn-primary m-2">Submit</button>
         </form>
     </div>
     </div>

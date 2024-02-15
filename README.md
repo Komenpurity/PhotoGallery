@@ -26,6 +26,7 @@ An application for displaying photos.
 - Firebase for Authentication
 - Cypress for Testing
 - VsCode as my text editor
+- AWS 
 
 ## Deliverables
 
@@ -95,19 +96,6 @@ An application for displaying photos.
 - Album id
 - Photo title
 - Image URL
-  <<<<<<< HEAD
-  =======
-
-## Technologies Used
-
-- ReactJs (Frontend)
-- Ruby on Rails (Backend)
-- SQLite Database
-- Bootstrap
-- Firebase for Authentication
-- ESLint
-
-> > > > > > > origin
 
 ## License
 

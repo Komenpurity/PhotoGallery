@@ -3,8 +3,28 @@
 ## Description
 An application for displaying photos.
 
-## Project Setup
+## Live Link
 
+
+## Project Setup
+1. Clone the application using git clone git@github.com:Komenpurity/PhotoGallery.git
+2. Go into the directory with the code
+3. Run bundle install to install gem dependencies
+4. Go into the client folder,cd client
+5. npm install in the client folder
+6. Run rails db:create db:seed db:migrate for intializing the database and setting it up with the data from the API in the seed file.
+7. Then run npm start --prefix client from the root directory of the folder and rails s on another terminal to get the backend running.  
+8. To run tests, cd into the client directory and run npm run test after you have installed cypress
+
+## Technologies Used
+
+- ReactJs (Frontend)
+- Ruby on Rails (Backend)
+- SQLite3 Database
+- Bootstrap
+- Firebase for Authentication
+- Cypress for Testing
+- VsCode as my text editor
 
 ## Deliverables
 
@@ -43,8 +63,8 @@ photos
 
 - (Photo) Have a page that displays a photo
    - Allow a user to edit the title of the photo
-      -A PATCH/PUT request must be sent to the backend server
-       after editing the page
+      - A PATCH/PUT request must be sent to the backend server
+       after editing the page 
    - The page must run a GET request for the photo
 
  
@@ -56,34 +76,23 @@ https://jsonplaceholder.typicode.com/
 the following Restful APIs.
 NB: Code quality for the backend will not be strictly assessed.
 
-● api/users
-○ Each user should have the following fields:
-■ Name
-■ Username
-■ Email
+1. api/users
+ Each user should have the following fields:
+- Name
+- Username
+- Email
 
-● api/albums
-- Each album should have the following fields:
-■ Album id
-■ User id
-■ Album title
+2. api/albums
+ Each album should have the following fields:
+- Album id
+- User id
+- Album title
   
-● api/photos
-○ Each album should have the following fields:
-■ Album id
-■ Photo title
-■ Image URL
-
-
-## Technologies Used
-
-- ReactJs (Frontend)
-- Ruby on Rails (Backend)
-- SQLite Database
-- Bootstrap
-- Firebase for Authentication
-- ESLint
-
+3. api/photos
+ Each album should have the following fields:
+- Album id
+- Photo title
+- Image URL
 
 ## License
 

@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../ firebase"
 import Navbar from './Navbar'
+import { useNavigate } from 'react-router-dom';
 
 function  Signup() {
   //store password and email state
   const [password, setPassword] = useState("");
   const [email,setEmail] = useState("")
+  const navigate = useNavigate();
 
     //handle form data
     function handleSubmit(e) {
@@ -15,6 +17,7 @@ function  Signup() {
       createUserWithEmailAndPassword(auth, email, password)
         .then((user) =>{
           console.log(user)
+          navigate('/login') 
         } )
         .catch((error) => {
           console.log(error);

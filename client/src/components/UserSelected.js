@@ -20,11 +20,10 @@ function UserSelected() {
   
         { value.map((element) => {
             return(
-              <> 
                 <div className="card max-w-sm rounded overflow-hidden shadow-lg d-flex m-4 col-6" key={element.id}> 
-                     <div className="card-body" key={element.id}> 
+                     <div className="card-body" key={element.id}>  
                          <h5>{element.name}</h5>  
-                         <p>Username: {element.username}</p> 
+                         <p >Username: {element.username}</p> 
                           <p >Email: {element.email}</p>
                           <p> How many Albums: {element.albums.length}</p>
 
@@ -38,7 +37,6 @@ function UserSelected() {
                           
                     </div>
                   </div>
-              </>
             )
         } )}
     </div>

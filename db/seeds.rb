@@ -7,6 +7,7 @@ def user_dataset
    users_array.each do |s| 
         User.create(name: s["name"], username: s["username"], email: s["email"]) 
     end
+    puts "Users done!"
 end
 user_dataset()
 
@@ -17,6 +18,7 @@ def photos_dataset
     photos_array.each do |s| 
         Photo.create(album_id: s["albumId"], photoTitle: s["title"], imageUrl: s["url"]) 
     end 
+    puts "Photos done!"
 end
 photos_dataset()
 
@@ -27,6 +29,7 @@ def albums_dataset
    albums_array.each do |s| 
         Album.create(album_id: s["id"], user_id: s["userId"], albumTitle: s["title"])  
     end
+    puts "Albums done!"
 end
 albums_dataset()
 

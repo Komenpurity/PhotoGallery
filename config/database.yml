@@ -36,6 +36,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %> 
   database: photo_gallery_production
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV["PHOTO_GALLERY_DATABASE_PASSWORD"] %>

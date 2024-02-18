@@ -5,11 +5,11 @@
 An application for displaying photos.
 
 ## Live Link
-[https://photogalleryapi.onrender.com](https://photogalleryapi.onrender.com)
+- [https://photogalleryapi.onrender.com](https://photogalleryapi.onrender.com)
 
-[User Data](https://photogalleryapi.onrender.com/users)
-[Album Data](https://photogalleryapi.onrender.com/albums)
-[Photo Data](https://photogalleryapi.onrender.com/photos) 
+- [User Data](https://photogalleryapi.onrender.com/users)
+- [Album Data](https://photogalleryapi.onrender.com/albums)
+- [Photo Data](https://photogalleryapi.onrender.com/photos) 
 
 
 ## Project Setup

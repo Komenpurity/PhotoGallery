@@ -21,7 +21,7 @@ function AuthDetails() {
     <div>
         {authUser ? (
         <>
-          { navigate('/userinfo') }
+          { navigate('https://photogalleryapi.onrender.com/userinfo') }
         </>
       ) : (
         <p>Signed Out</p> 

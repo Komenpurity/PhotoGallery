@@ -7,7 +7,7 @@ function UserSelected() {
   
  //fetch user data from api using the specified id
    useEffect(() => {
-    fetch(`/users/${id}`)
+    fetch(`https://photogalleryapi.onrender.com/users/${id}`)
     .then(response => response.json())
     .then((data) =>  {  
        setValue([data])          

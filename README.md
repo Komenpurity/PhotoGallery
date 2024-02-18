@@ -5,6 +5,12 @@
 An application for displaying photos.
 
 ## Live Link
+[https://photogalleryapi.onrender.com](https://photogalleryapi.onrender.com)
+
+[User Data](https://photogalleryapi.onrender.com/users)
+[Album Data](https://photogalleryapi.onrender.com/albums)
+[Photo Data](https://photogalleryapi.onrender.com/photos) 
+
 
 ## Project Setup
 
@@ -21,12 +27,12 @@ An application for displaying photos.
 
 - ReactJs (Frontend)
 - Ruby on Rails (Backend)
-- SQLite3 Database
+- Postgres Database
 - Bootstrap
 - Firebase for Authentication
 - Cypress for Testing
 - VsCode as my text editor
-- AWS 
+- Render for deployment
 
 ## Deliverables
 

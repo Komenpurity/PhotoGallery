@@ -9,7 +9,7 @@ function AlbumInfo() {
 
     //fetch data from the api
     useEffect(() => {
-        fetch("/albums") 
+        fetch("https://photogalleryapi.onrender.com/albums") 
         .then((r) => r.json())
         .then((data) => { 
             setAlbum(data)
@@ -21,7 +21,7 @@ function AlbumInfo() {
 
     //fetch album details when card clicked by id 
   function handleClick(id){
-     navigate(`/albums/${id}`)  
+     navigate(`https://photogalleryapi.onrender.com/albums/${id}`)  
   }
 
 

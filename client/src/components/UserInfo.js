@@ -10,7 +10,7 @@ function UserInfo() {
 
   //fetch data from the api
   useEffect(() => {
-    fetch("/users")
+    fetch("https://photogalleryapi.onrender.com/users")
     .then((r) => r.json())
     .then((data) => {
         setUsers(data)
@@ -22,7 +22,7 @@ function UserInfo() {
 
       //redirect the user to the specified id
       function handleClick(id){  
-       navigate(`/users/${id}`)  
+       navigate(`https://photogalleryapi.onrender.com/users/${id}`)  
      }
 
 

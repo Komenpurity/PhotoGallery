@@ -13,7 +13,7 @@ function PhotoForm() {
     function handleSubmit(e){ 
         e.preventDefault()
         
-        fetch(`/photos/${id}`, { 
+        fetch(`https://photogalleryapi.onrender.com/photos/${id}`, { 
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

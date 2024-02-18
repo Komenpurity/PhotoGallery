@@ -22,7 +22,7 @@ function UserInfo() {
 
       //redirect the user to the specified id
       function handleClick(id){  
-       navigate(`https://photogalleryapi.onrender.com/users/${id}`)  
+       navigate(`/users/${id}`)   
      }
 
 

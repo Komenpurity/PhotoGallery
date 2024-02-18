@@ -18,7 +18,7 @@ function Login() {
       signInWithEmailAndPassword(auth, email, password)
         .then((user) =>{
           setUser(user) 
-           navigate('https://photogalleryapi.onrender.com/userinfo') 
+           navigate('/userinfo') 
         } )
         .catch((error) => {
           console.log(error);

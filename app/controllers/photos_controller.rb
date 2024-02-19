@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
       def index
-        photos = Photo.all
+        photos = Photo.limit(30).all
         render json: photos,include: :album
       end
 

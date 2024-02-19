@@ -14,9 +14,9 @@ user_dataset()
 
 def photos_dataset
     photos = RestClient.get("https://jsonplaceholder.typicode.com/photos")
-    photos_array = JSON.parse(photos)
+    photos_array = JSON.parse(photos) 
     photos_array.each do |s| 
-        Photo.create(album_id: s["albumId"], photoTitle: s["title"], imageUrl: s["url"]) 
+        Photo.create(album_id: s["albumId"], photoTitle: s["title"], imageUrl: s["url"])
     end 
     puts "Photos done!"
 end

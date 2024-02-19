@@ -9,7 +9,7 @@ function AlbumInfo() {
 
     //fetch data from the api
     useEffect(() => {
-        fetch("https://photogalleryapi.onrender.com/albums") 
+        fetch("https://photogallery-2dl5.onrender.com/albums") 
         .then((r) => r.json())
         .then((data) => { 
             setAlbum(data)

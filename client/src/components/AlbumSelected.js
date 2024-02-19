@@ -7,7 +7,7 @@ function AlbumSelected() {
 
     //fetch album of a specific id
     useEffect(() => {
-        fetch(`https://photogalleryapi.onrender.com/albums/${id}`)
+        fetch(`https://photogallery-2dl5.onrender.com/albums/${id}`)
         .then(response => response.json())
         .then((data) =>  {  
             setInfo([data]) 

@@ -8,7 +8,7 @@ function PhotoInfo() {
 
     //fetch data from the api
     useEffect(() => {
-        fetch("https://photogalleryapi.onrender.com/photos") 
+        fetch("https://photogallery-2dl5.onrender.com/photos") 
         .then((r) => r.json())
         .then((data) => { 
            setPhoto(data)

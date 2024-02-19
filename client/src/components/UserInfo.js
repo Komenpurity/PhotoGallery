@@ -10,7 +10,7 @@ function UserInfo() {
 
   //fetch data from the api
   useEffect(() => {
-    fetch("https://photogalleryapi.onrender.com/users")
+    fetch("https://photogallery-2dl5.onrender.com/users")
     .then((r) => r.json())
     .then((data) => {
         setUsers(data)
